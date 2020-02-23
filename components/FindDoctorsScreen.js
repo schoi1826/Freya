@@ -1,15 +1,6 @@
 import React, { Component } from 'react';
-import { Button, View, Text, Dimensions, StyleSheet, TouchableHighlight } from 'react-native';
+import { View, Text, Dimensions, StyleSheet, TouchableHighlight } from 'react-native';
 import MapView from 'react-native-maps';
-
-var markers = [
-  {
-    latitude: 38.846226,
-    longitude: -77.306374,
-    title: 'Home',
-    subtitle: 'Chez moi!'
-  }
-];
 
 export default class FindDoctorsScreen extends Component {
 	constructor(props) {

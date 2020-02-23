@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
 
 export default class ResourcesScreen extends Component {
 	render() {

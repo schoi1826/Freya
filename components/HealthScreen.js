@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, View, Text, TouchableHighlight, StyleSheet, FlatList } from 'react-native';
+import { View, Text, TouchableHighlight, StyleSheet, FlatList } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from 'react-native-elements';
 import Collapsible from 'react-native-collapsible';

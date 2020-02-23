@@ -3,6 +3,7 @@ import { Text, View } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+import LocalData from './components/LocalData';
 import HomeScreen from './components/HomeScreen';
 import FindDoctorsScreen from './components/FindDoctorsScreen';
 import DoctorInfoScreen from './components/DoctorInfoScreen';

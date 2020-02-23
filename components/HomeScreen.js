@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Button, View, Text, StyleSheet } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import { Icon } from 'react-native-elements';
 import * as Font from 'expo-font';
 import Collapsible from 'react-native-collapsible';
