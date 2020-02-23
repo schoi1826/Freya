@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, TouchableHighlight, StyleSheet, FlatList } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, FlatList } from 'react-native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { Icon } from 'react-native-elements';
 import Collapsible from 'react-native-collapsible';
@@ -46,7 +46,6 @@ class HealthConcerns extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			collapsed: true,
 			list: concerns_list
 		};
 	}
@@ -69,9 +68,9 @@ class HealthConcerns extends React.Component {
 						renderItem={row => {
 							return (
 								<View>
-									<TouchableHighlight onPress={() => this.toggleExpand(row.item.key)} style={styles.title} underlayColor='red'>
+									<TouchableOpacity onPress={() => this.toggleExpand(row.item.key)} style={styles.title} underlayColor='red'>
 										<Text style={styles.titleText}>{row.item.title}</Text>
-									</TouchableHighlight>
+									</TouchableOpacity>
 									<Collapsible collapsed={row.item.collapsed}>
 										<Text style={styles.content}>{row.item.content}</Text>
 									</Collapsible>
@@ -87,10 +86,9 @@ class HealthConcerns extends React.Component {
 
 const exams_list = [
 	{title: 'Pap Test', content: 'Starting at the age of 21, pap tests can help detect signs of cervical cancer', collapsed: true, key: 0},
-	{title: 'Pelvic Exam', content: 'Pregnancy, menstruation, and menopause', collapsed: true, key: 1},
-	{title: 'Clinical Breast Exam', content: 'For those around the ages 25-39, this exam will test for breast cancer', collapsed: true, key: 2},
-	{title: 'Mammogram', content: 'Starting at the age of 40, mammogram screenings every 1-2 years can help detect cancer', collapsed: true, key: 3},
-	{title: 'STD Screening', content: 'For those sexually active, this exam will screen for sexually transmitted diseases', collapsed: true, key: 4},
+	{title: 'Clinical Breast Exam', content: 'For those around the ages 25-39, this exam will test for breast cancer', collapsed: true, key: 1},
+	{title: 'Mammogram', content: 'Starting at the age of 40, mammogram screenings every 1-2 years can help detect cancer', collapsed: true, key: 2},
+	{title: 'STD Screening', content: 'For those sexually active, this exam will screen for sexually transmitted diseases', collapsed: true, key: 3},
 ];
 
 class WellnessExam extends React.Component {
@@ -120,9 +118,9 @@ class WellnessExam extends React.Component {
 						renderItem={row => {
 							return (
 								<View>
-									<TouchableHighlight onPress={() => this.toggleExpand(row.item.key)} style={styles.title} underlayColor='red'>
+									<TouchableOpacity onPress={() => this.toggleExpand(row.item.key)} style={styles.title} underlayColor='white'>
 										<Text style={styles.titleText}>{row.item.title}</Text>
-									</TouchableHighlight>
+									</TouchableOpacity>
 									<Collapsible collapsed={row.item.collapsed}>
 										<Text style={styles.content}>{row.item.content}</Text>
 									</Collapsible>
@@ -136,44 +134,11 @@ class WellnessExam extends React.Component {
 	}
 }
 
-const rights_list = [
-	{title: 'Family Planning', content: 'Contraceptive options, sterilization, and abortion', collapsed: true, key: 0},
-	{title: 'Reproductive Health', content: 'Pregnancy, menstruation, and menopause', collapsed: true, key: 1},
-];
-
 class Rights extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			collapsed: true,
-			list: rights_list
-		};
-	}
-
-	toggleExpand = (val) => {
-		let item = this.state.list;
-		item[val].collapsed = !item[val].collapsed;
-		this.setState({list: item});
-	};
-
 	render() {
 		return (
-			<View>
-				<FlatList 
-					data={this.state.list}
-					renderItem={row => {
-						return (
-							<View>
-								<TouchableHighlight onPress={() => this.toggleExpand(row.item.key)} style={styles.title} underlayColor='red'>
-									<Text style={styles.titleText}>{row.item.title}</Text>
-								</TouchableHighlight>
-								<Collapsible collapsed={row.item.collapsed}>
-									<Text style={styles.content}>{row.item.content}</Text>
-								</Collapsible>
-							</View>
-						)
-					}}
-				/>
+			<View style={styles.header}>
+				<Text style={styles.headerText}>If, for any reason, you feel that your gynecologist has not respected your voice nor your boundaries, please talk to a lawyer.</Text>
 			</View>
 		)
 	}
@@ -183,18 +148,19 @@ const styles = StyleSheet.create({
 	header: {
 		flex: 1,
 		justifyContent: 'center',
-		backgroundColor: 'lightblue',
+		backgroundColor: '#13322C',
 		padding: 10,
 	},
 	headerText: {
 		fontSize: 25,
 		textAlign: 'center',
 		flexWrap: 'wrap',
+		color: 'white',
 	},
   	title: {
    		justifyContent: 'center',
   		height: 100,
-  		backgroundColor: 'pink',
+  		backgroundColor: '#DCBBB2',
   	},
   	titleText: {
   		fontSize: 25,

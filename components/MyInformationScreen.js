@@ -39,9 +39,9 @@ export default class MyInformationScreen extends Component {
 	render() {
 		return (
 			<View style={{flex: 1}}>
-				<View style={{flex: 2, backgroundColor: 'pink', alignItems: 'center', justifyContent: 'center'}}>
+				<View style={{flex: 2, backgroundColor: '#13322C', alignItems: 'center', justifyContent: 'center'}}>
 		    		<TextInput style={styles.header} value={this.state.user.name} onChangeText={value => this.saveData('name', value)} />
-		    		<Text style={styles.body}>
+		    		<Text style={styles.body, {color: 'white'}}>
 		    			Age: {this.state.user.age} {'\n'}
 		    		</Text>
 		    	</View>

@@ -10,14 +10,14 @@ export default class DoctorInfoScreen extends Component {
 
 		return (
 			<View style={{flex: 1}}>
-				<View style={{flex: 2, backgroundColor: 'pink', alignItems: 'center', justifyContent: 'center'}}>
+				<View style={{flex: 2, backgroundColor: '#13322C', alignItems: 'center', justifyContent: 'center'}}>
 		    		<Text style={styles.header}>{doctor.first_name + ' ' + doctor.last_name}</Text>
-		    		<Text style={styles.body}>
+		    		<Text style={styles.body, {color: 'white'}}>
 		    			Gender: {doctor.gender} {'\n'}
 		    			Phone: {clinic.phones[0].number}
 		    		</Text>
 		    	</View>
-		    	<View style={{flex: 4, flexDirection: 'row', padding: 10}}>
+		    	<View style={{flex: 4, backgroundColor: '#DCBBB2', flexDirection: 'row', padding: 10}}>
 			    	<Text style={styles.body}>
 			    		Clinic: {clinic.name} {'\n'}
 			    		Street Address: {address.street} {'\n'}
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     fontSize: 50,
     textAlign: 'center',
     fontFamily: 'yeseva-one',
-    color: 'white',
+    color: '#C89720',
     padding: 10,
   },
   body: {

@@ -19,13 +19,16 @@ export default function App() {
       <Stack.Navigator
         initialRouteName="Home"
         screenOptions={{
-          headerTintColor: 'black',
+          headerTintColor: '#011B18',
           headerTitleStyle: {
             fontWeight: 'bold',
           },
+          headerStyle: {
+            backgroundColor: '#C89720',
+          },
         }}
       >
-        <Stack.Screen name="Home" component={HomeScreen} options={{title: 'Welcome!'}} />
+        <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="FindDoctors" component={FindDoctorsScreen} options={{title: 'Find Trusted Doctors'}} />
         <Stack.Screen name="DoctorInfo" component={DoctorInfoScreen} />
         <Stack.Screen name="Health" component={HealthScreen} options={{title: 'What to expect from your visit'}} />
